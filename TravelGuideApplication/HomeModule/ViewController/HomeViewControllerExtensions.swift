@@ -19,4 +19,22 @@ extension HomeViewController {
         hotelsView.layer.shadowOffset = .zero
         hotelsView.layer.shadowRadius = 10
     }
+    
+    func setNavBar(){
+        let backImage = UIImage(named: "backButtonIcon")
+        self.navigationController?.navigationBar.backIndicatorImage = backImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+        self.navigationController?.navigationBar.tintColor = .black
+        
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        
+        
+        let attributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        
+        //self.navigationController?.navigationBar.backItem?.title = "Custom"
+    }
 }

@@ -15,22 +15,20 @@ class TabBarControllerExtension: UITabBarController {
         super.viewDidLoad()
         
         tabBar.selectionIndicatorImage = UIImage(named: "rectangle")
-        
-        
         tabBar.layer.shadowColor = UIColor(named: "tabBarShadow")?.cgColor
         tabBar.layer.shadowOpacity = 1
         tabBar.layer.shadowOffset = .zero
         tabBar.layer.shadowRadius = 10
-        
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
-        var tabFrame = tabBar.frame
-        tabFrame.size.height = 100
-        tabFrame.origin.y = view.frame.size.height - 100
-        tabBar.frame = tabFrame
+        if UIScreen.main.bounds.size.height > 700 {
+            var tabFrame = tabBar.frame
+            tabFrame.size.height = 100
+            tabFrame.origin.y = view.frame.size.height - 100
+            tabBar.frame = tabFrame
+        }
+        
     }
 
 }

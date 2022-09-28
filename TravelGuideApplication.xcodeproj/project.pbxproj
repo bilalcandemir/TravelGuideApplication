@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290FF5157B51B76936006A3D /* Pods_TravelGuideApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4700C70D0F232D87747B97 /* Pods_TravelGuideApplication.framework */; };
 		562B70DA28E33471002A52AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562B70D928E33471002A52AB /* AppDelegate.swift */; };
 		562B70DC28E33471002A52AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562B70DB28E33471002A52AB /* SceneDelegate.swift */; };
 		562B70DE28E33471002A52AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562B70DD28E33471002A52AB /* ViewController.swift */; };
@@ -14,9 +15,23 @@
 		562B70E428E33471002A52AB /* TravelGuideApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 562B70E228E33471002A52AB /* TravelGuideApplication.xcdatamodeld */; };
 		562B70E628E33474002A52AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 562B70E528E33474002A52AB /* Assets.xcassets */; };
 		562B70E928E33474002A52AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 562B70E728E33474002A52AB /* LaunchScreen.storyboard */; };
+		564A450028E33A5D00D7912F /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A44FF28E33A5D00D7912F /* TableViewHelper.swift */; };
+		564A450228E33A6800D7912F /* CollectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A450128E33A6800D7912F /* CollectionViewHelper.swift */; };
+		564A450428E33A9300D7912F /* TabBarControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A450328E33A9300D7912F /* TabBarControllerExtension.swift */; };
+		564A450628E33C1A00D7912F /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564A450528E33C1A00D7912F /* HomeStoryboard.storyboard */; };
+		564A450828E33C3300D7912F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A450728E33C3300D7912F /* HomeViewController.swift */; };
+		564A450E28E3578800D7912F /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564A450D28E3578800D7912F /* SearchStoryboard.storyboard */; };
+		564A451028E357DF00D7912F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A450F28E357DF00D7912F /* SearchViewController.swift */; };
+		564A451628E3585B00D7912F /* BookmarkStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564A451528E3585B00D7912F /* BookmarkStoryboard.storyboard */; };
+		564A451828E3588900D7912F /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A451728E3588900D7912F /* BookmarkViewController.swift */; };
+		564A451A28E42BEE00D7912F /* Source_Sans_Pro in Resources */ = {isa = PBXBuildFile; fileRef = 564A451928E42BEE00D7912F /* Source_Sans_Pro */; };
+		564A451C28E4556000D7912F /* HomeViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A451B28E4556000D7912F /* HomeViewControllerExtensions.swift */; };
+		564A451F28E458F200D7912F /* TopArticlesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A451D28E458F200D7912F /* TopArticlesCollectionViewCell.swift */; };
+		564A452028E458F200D7912F /* TopArticlesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 564A451E28E458F200D7912F /* TopArticlesCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0304E5E5D4C52480887683EC /* Pods-TravelGuideApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelGuideApplication.release.xcconfig"; path = "Target Support Files/Pods-TravelGuideApplication/Pods-TravelGuideApplication.release.xcconfig"; sourceTree = "<group>"; };
 		562B70D628E33471002A52AB /* TravelGuideApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelGuideApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		562B70D928E33471002A52AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		562B70DB28E33471002A52AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +41,21 @@
 		562B70E528E33474002A52AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		562B70E828E33474002A52AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		562B70EA28E33474002A52AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		564A44FF28E33A5D00D7912F /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
+		564A450128E33A6800D7912F /* CollectionViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHelper.swift; sourceTree = "<group>"; };
+		564A450328E33A9300D7912F /* TabBarControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerExtension.swift; sourceTree = "<group>"; };
+		564A450528E33C1A00D7912F /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
+		564A450728E33C3300D7912F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		564A450D28E3578800D7912F /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
+		564A450F28E357DF00D7912F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		564A451528E3585B00D7912F /* BookmarkStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookmarkStoryboard.storyboard; sourceTree = "<group>"; };
+		564A451728E3588900D7912F /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		564A451928E42BEE00D7912F /* Source_Sans_Pro */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source_Sans_Pro; sourceTree = "<group>"; };
+		564A451B28E4556000D7912F /* HomeViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtensions.swift; sourceTree = "<group>"; };
+		564A451D28E458F200D7912F /* TopArticlesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopArticlesCollectionViewCell.swift; sourceTree = "<group>"; };
+		564A451E28E458F200D7912F /* TopArticlesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopArticlesCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA4700C70D0F232D87747B97 /* Pods_TravelGuideApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelGuideApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0B0AC28F4F61A26519B555D /* Pods-TravelGuideApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelGuideApplication.debug.xcconfig"; path = "Target Support Files/Pods-TravelGuideApplication/Pods-TravelGuideApplication.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290FF5157B51B76936006A3D /* Pods_TravelGuideApplication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +75,8 @@
 			children = (
 				562B70D828E33471002A52AB /* TravelGuideApplication */,
 				562B70D728E33471002A52AB /* Products */,
+				632BE77E6A1E840C631B0452 /* Pods */,
+				849B0B16966A1B846C84F8F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +91,214 @@
 		562B70D828E33471002A52AB /* TravelGuideApplication */ = {
 			isa = PBXGroup;
 			children = (
-				562B70D928E33471002A52AB /* AppDelegate.swift */,
-				562B70DB28E33471002A52AB /* SceneDelegate.swift */,
+				564A44FE28E339BF00D7912F /* Network */,
+				564A44FD28E3398500D7912F /* HelperClasses */,
+				564A44F828E3393600D7912F /* Extensions */,
+				564A44F728E3390600D7912F /* Utilities */,
+				564A44F628E338F900D7912F /* DetailsModule */,
+				564A44F528E338E600D7912F /* BookmarkModule */,
+				564A44F428E338DD00D7912F /* SearchModule */,
+				564A44F328E338C400D7912F /* HomeModule */,
+				564A44F228E338AE00D7912F /* Application */,
 				562B70DD28E33471002A52AB /* ViewController.swift */,
 				562B70DF28E33471002A52AB /* Main.storyboard */,
-				562B70E528E33474002A52AB /* Assets.xcassets */,
-				562B70E728E33474002A52AB /* LaunchScreen.storyboard */,
-				562B70EA28E33474002A52AB /* Info.plist */,
-				562B70E228E33471002A52AB /* TravelGuideApplication.xcdatamodeld */,
 			);
 			path = TravelGuideApplication;
+			sourceTree = "<group>";
+		};
+		564A44F228E338AE00D7912F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				562B70D928E33471002A52AB /* AppDelegate.swift */,
+				562B70DB28E33471002A52AB /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		564A44F328E338C400D7912F /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+				564A44FC28E3397B00D7912F /* CustomCell */,
+				564A44FB28E3397300D7912F /* Model */,
+				564A44FA28E3396D00D7912F /* ViewModel */,
+				564A44F928E3396200D7912F /* ViewController */,
+				564A450528E33C1A00D7912F /* HomeStoryboard.storyboard */,
+			);
+			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		564A44F428E338DD00D7912F /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				564A450C28E3577700D7912F /* CustomCell */,
+				564A450B28E3577200D7912F /* Model */,
+				564A450A28E3576D00D7912F /* ViewModel */,
+				564A450928E3576200D7912F /* ViewController */,
+				564A450D28E3578800D7912F /* SearchStoryboard.storyboard */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		564A44F528E338E600D7912F /* BookmarkModule */ = {
+			isa = PBXGroup;
+			children = (
+				564A451428E3584700D7912F /* CustomCell */,
+				564A451328E3584300D7912F /* Model */,
+				564A451228E3583F00D7912F /* ViewModel */,
+				564A451128E3583800D7912F /* ViewController */,
+				564A451528E3585B00D7912F /* BookmarkStoryboard.storyboard */,
+			);
+			path = BookmarkModule;
+			sourceTree = "<group>";
+		};
+		564A44F628E338F900D7912F /* DetailsModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailsModule;
+			sourceTree = "<group>";
+		};
+		564A44F728E3390600D7912F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				562B70E228E33471002A52AB /* TravelGuideApplication.xcdatamodeld */,
+				562B70E528E33474002A52AB /* Assets.xcassets */,
+				562B70E728E33474002A52AB /* LaunchScreen.storyboard */,
+				564A451928E42BEE00D7912F /* Source_Sans_Pro */,
+				562B70EA28E33474002A52AB /* Info.plist */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		564A44F828E3393600D7912F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				564A450328E33A9300D7912F /* TabBarControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		564A44F928E3396200D7912F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				564A450728E33C3300D7912F /* HomeViewController.swift */,
+				564A451B28E4556000D7912F /* HomeViewControllerExtensions.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		564A44FA28E3396D00D7912F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		564A44FB28E3397300D7912F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		564A44FC28E3397B00D7912F /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				564A451D28E458F200D7912F /* TopArticlesCollectionViewCell.swift */,
+				564A451E28E458F200D7912F /* TopArticlesCollectionViewCell.xib */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		564A44FD28E3398500D7912F /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				564A44FF28E33A5D00D7912F /* TableViewHelper.swift */,
+				564A450128E33A6800D7912F /* CollectionViewHelper.swift */,
+			);
+			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		564A44FE28E339BF00D7912F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		564A450928E3576200D7912F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				564A450F28E357DF00D7912F /* SearchViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		564A450A28E3576D00D7912F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		564A450B28E3577200D7912F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		564A450C28E3577700D7912F /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		564A451128E3583800D7912F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				564A451728E3588900D7912F /* BookmarkViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		564A451228E3583F00D7912F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		564A451328E3584300D7912F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		564A451428E3584700D7912F /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		632BE77E6A1E840C631B0452 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0B0AC28F4F61A26519B555D /* Pods-TravelGuideApplication.debug.xcconfig */,
+				0304E5E5D4C52480887683EC /* Pods-TravelGuideApplication.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		849B0B16966A1B846C84F8F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA4700C70D0F232D87747B97 /* Pods_TravelGuideApplication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 562B70ED28E33474002A52AB /* Build configuration list for PBXNativeTarget "TravelGuideApplication" */;
 			buildPhases = (
+				B59C85E7A878A7D3F9ED82B2 /* [CP] Check Pods Manifest.lock */,
 				562B70D228E33471002A52AB /* Sources */,
 				562B70D328E33471002A52AB /* Frameworks */,
 				562B70D428E33471002A52AB /* Resources */,
+				6CAE9DD9F2824DABA9B197E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,21 +362,76 @@
 			buildActionMask = 2147483647;
 			files = (
 				562B70E928E33474002A52AB /* LaunchScreen.storyboard in Resources */,
+				564A452028E458F200D7912F /* TopArticlesCollectionViewCell.xib in Resources */,
+				564A451628E3585B00D7912F /* BookmarkStoryboard.storyboard in Resources */,
+				564A450E28E3578800D7912F /* SearchStoryboard.storyboard in Resources */,
 				562B70E628E33474002A52AB /* Assets.xcassets in Resources */,
+				564A450628E33C1A00D7912F /* HomeStoryboard.storyboard in Resources */,
+				564A451A28E42BEE00D7912F /* Source_Sans_Pro in Resources */,
 				562B70E128E33471002A52AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6CAE9DD9F2824DABA9B197E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelGuideApplication/Pods-TravelGuideApplication-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelGuideApplication/Pods-TravelGuideApplication-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelGuideApplication/Pods-TravelGuideApplication-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B59C85E7A878A7D3F9ED82B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelGuideApplication-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		562B70D228E33471002A52AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564A450428E33A9300D7912F /* TabBarControllerExtension.swift in Sources */,
 				562B70DE28E33471002A52AB /* ViewController.swift in Sources */,
 				562B70DA28E33471002A52AB /* AppDelegate.swift in Sources */,
+				564A451028E357DF00D7912F /* SearchViewController.swift in Sources */,
+				564A451828E3588900D7912F /* BookmarkViewController.swift in Sources */,
+				564A451C28E4556000D7912F /* HomeViewControllerExtensions.swift in Sources */,
+				564A450828E33C3300D7912F /* HomeViewController.swift in Sources */,
+				564A451F28E458F200D7912F /* TopArticlesCollectionViewCell.swift in Sources */,
+				564A450228E33A6800D7912F /* CollectionViewHelper.swift in Sources */,
 				562B70DC28E33471002A52AB /* SceneDelegate.swift in Sources */,
+				564A450028E33A5D00D7912F /* TableViewHelper.swift in Sources */,
 				562B70E428E33471002A52AB /* TravelGuideApplication.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +574,7 @@
 		};
 		562B70EE28E33474002A52AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0B0AC28F4F61A26519B555D /* Pods-TravelGuideApplication.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -293,7 +582,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4V65M99L44;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelGuideApplication/Info.plist;
+				INFOPLIST_FILE = TravelGuideApplication/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -314,6 +603,7 @@
 		};
 		562B70EF28E33474002A52AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0304E5E5D4C52480887683EC /* Pods-TravelGuideApplication.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -321,7 +611,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4V65M99L44;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelGuideApplication/Info.plist;
+				INFOPLIST_FILE = TravelGuideApplication/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

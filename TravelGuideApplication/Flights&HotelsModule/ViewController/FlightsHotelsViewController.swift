@@ -18,7 +18,9 @@ class FlightsHotelsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = selectedTitle
-        tableViewHelper = .init(tableView: flightsHotelsTableView, vc: self, itemsArray: viewModel.flightsHotelsModel.items, cellIdentifier: FlightsHotelsTableViewCell.identifier)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+        tableViewHelper = .init(tableView: flightsHotelsTableView, vc: self, itemsArray: viewModel.flightsHotelsModel.items, cellIdentifier: FlightsHotelsTableViewCell.identifier, isSearch: false)
     }
 
 

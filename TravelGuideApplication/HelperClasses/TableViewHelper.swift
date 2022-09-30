@@ -13,14 +13,16 @@ class TableViewHelper:NSObject {
     var viewController:UIViewController?
     var itemsArray:[Any] = []
     var cellIdentifier:String?
+    var isSearch:Bool!
     
     // Use init when create a new table view
-    init(tableView: UITableView, vc: UIViewController, itemsArray: [Any], cellIdentifier: String){
+    init(tableView: UITableView, vc: UIViewController, itemsArray: [Any], cellIdentifier: String, isSearch:Bool){
         super.init()
         self.tableView = tableView
         self.viewController = vc
         self.itemsArray = itemsArray
         self.cellIdentifier = cellIdentifier
+        self.isSearch = isSearch
         configureTableView(cellIdentifier)
     }
     
@@ -42,17 +44,22 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        if itemsArray.isEmpty {
+            let cell = UITableViewCell()
+            return cell
+        }
+        
         //Casting process for understand which array come from view model and create the custom cell
         if let flightsArray = itemsArray as? [Flights] {
             let cell = tableView.dequeueReusableCell(withIdentifier: FlightsHotelsTableViewCell.identifier) as! FlightsHotelsTableViewCell
-            cell.setFlightsData(flightsArray[indexPath.row])
+            cell.setFlightsData(flightsArray[indexPath.row], isSearch)
             return cell
         }
         
         //Casting process for understand which array come from view model and create the custom cell
         if let hotelsArray = itemsArray as? [Hotels] {
             let cell = tableView.dequeueReusableCell(withIdentifier: FlightsHotelsTableViewCell.identifier) as! FlightsHotelsTableViewCell
-            cell.setHotelsData(hotelsArray[indexPath.row])
+            cell.setHotelsData(hotelsArray[indexPath.row], isSearch)
             return cell
         }
         
@@ -62,7 +69,7 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 180
     }
     
     

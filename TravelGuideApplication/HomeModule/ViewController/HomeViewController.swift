@@ -24,17 +24,10 @@ class HomeViewController: UIViewController {
         createCollectionView()
     }
     
-    // This screen's navigation bar doesen't show but in the second screen, navigation bar will be show
+     //This screen's navigation bar doesen't show but in the second screen, navigation bar will be show
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
         super.viewWillAppear(animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        self.tabBarController?.tabBar.isHidden = true
-        super.viewWillDisappear(animated)
     }
     
     func createCollectionView(){

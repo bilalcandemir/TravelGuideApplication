@@ -34,7 +34,5 @@ extension HomeViewController {
         
         let attributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
         UINavigationBar.appearance().titleTextAttributes = attributes
-        
-        //self.navigationController?.navigationBar.backItem?.title = "Custom"
     }
 }

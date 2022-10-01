@@ -80,9 +80,14 @@ class FlightsHotelsTableViewCell: UITableViewCell {
             typeLabel.isHidden = true
             typeView.isHidden = true
         }
-            
+    }
+    
+    func setBookmarksData(_ item:Bookmark, _ isSearch:Bool){
+        typeLabel.isHidden = true
+        typeView.isHidden = true
         
-        
+        mainTitleLabel.text = item.bookmarkName
+        mainDescriptionLabel.text = item.bookmarkDescription
     }
     
 }

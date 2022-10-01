@@ -63,6 +63,12 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
+        if let bookmarksArray = itemsArray as? [Bookmark] {
+            let cell = tableView.dequeueReusableCell(withIdentifier: FlightsHotelsTableViewCell.identifier) as! FlightsHotelsTableViewCell
+            cell.setBookmarksData(bookmarksArray[indexPath.row], isSearch)
+            return cell
+        }
+        
         
         let cell = UITableViewCell()
         return cell

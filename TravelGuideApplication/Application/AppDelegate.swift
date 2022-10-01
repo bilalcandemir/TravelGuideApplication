@@ -10,6 +10,16 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    lazy var coreDataStack: CoreDataStack = .init(entityName: "TodoListDataModel")
+    
+    static let sharedAppDelegate: AppDelegate = {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("unfortunately crashed")
+        }
+        
+        return delegate
+    }()
 
 
 

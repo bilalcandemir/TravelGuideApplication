@@ -15,11 +15,34 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookmarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F30-Kc-2sW">
+                                <rect key="frame" x="16" y="68" width="158" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aXM-aD-KZc">
+                                <rect key="frame" x="0.0" y="120" width="414" height="677"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="F30-Kc-2sW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="JhM-wT-IPh"/>
+                            <constraint firstItem="aXM-aD-KZc" firstAttribute="top" secondItem="F30-Kc-2sW" secondAttribute="bottom" constant="16" id="XoG-0f-x9u"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aXM-aD-KZc" secondAttribute="trailing" id="bfY-uM-cpE"/>
+                            <constraint firstItem="aXM-aD-KZc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="d4Z-XX-TDD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="aXM-aD-KZc" secondAttribute="bottom" constant="16" id="gCp-ZB-D6H"/>
+                            <constraint firstItem="F30-Kc-2sW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="j6Y-W4-qYE"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tabBarCalendarIcon" selectedImage="selectedCalendarIcon" id="4My-aq-nAu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="aXM-aD-KZc" id="Cxa-OP-cxn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

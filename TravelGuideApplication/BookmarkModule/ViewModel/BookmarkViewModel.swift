@@ -13,4 +13,8 @@ class BookmarkViewModel {
     func loadData(){
         bookmarkModel.loadBookmarkData()
     }
+    
+    func returnBookmarkData() -> [Bookmark]{
+        return bookmarkModel.bookMarkArray
+    }
 }

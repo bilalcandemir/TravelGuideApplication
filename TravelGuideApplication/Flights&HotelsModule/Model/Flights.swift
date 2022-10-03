@@ -7,8 +7,11 @@
 
 import Foundation
 
-struct Flights {
-    var flightNumber:Int
-    var flightName:String
-    var flightDescription:String
+struct Flights:Decodable {
+    var origin:String
+    var destination: String
+    var price: Int
+    var airline: String
+    var flight_number: Int
+    var departure_at:String
 }

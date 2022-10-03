@@ -31,14 +31,14 @@ class HomeViewController: UIViewController {
     }
     
     func createCollectionView(){
-        collectionHelper = .init(articlesCollectionView, self, viewModel.articleModel.articlesData, self.navigationController!)
+        collectionHelper = .init(articlesCollectionView, self, viewModel.returnData(), self.navigationController!)
     }
     
     @IBAction func flightsButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "FlightsHotels", bundle: nil)
         let flightsViewController = storyboard.instantiateViewController(withIdentifier: "FlightsHotelsViewController") as! FlightsHotelsViewController
         flightsViewController.selectedTitle = "Flights"
-        flightsViewController.viewModel.loadDataForFlights()
+        flightsViewController.viewModel.loadDataForHotelsWithNetwork()
         self.navigationController?.pushViewController(flightsViewController, animated: true)
     }
     

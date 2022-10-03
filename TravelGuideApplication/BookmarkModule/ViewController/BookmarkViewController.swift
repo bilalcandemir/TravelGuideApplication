@@ -17,7 +17,7 @@ class BookmarkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.loadData()
-        tableViewHelper = .init(tableView: mainTableView, vc: self, itemsArray: viewModel.bookmarkModel.bookMarkArray, cellIdentifier: FlightsHotelsTableViewCell.identifier, isSearch: false)
+        tableViewHelper = .init(tableView: mainTableView, vc: self, itemsArray: viewModel.returnBookmarkData(), cellIdentifier: FlightsHotelsTableViewCell.identifier, isSearch: false)
     }
 
 }

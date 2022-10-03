@@ -51,8 +51,8 @@ class FlightsHotelsTableViewCell: UITableViewCell {
     }
     
     func setFlightsData(_ item:Flights, _ isSearch:Bool){
-        mainTitleLabel.text = item.flightName
-        mainDescriptionLabel.text = item.flightDescription
+        mainTitleLabel.text = "\(item.origin) - \(item.destination)"
+        mainDescriptionLabel.text = String(item.flight_number)
         
         typeLabel.text = "FLIGHT"
         

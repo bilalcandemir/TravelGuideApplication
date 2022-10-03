@@ -27,14 +27,17 @@ class SearchModel {
     
     func loadDataForFlights(){
         items.removeAll()
-        var item = Flights(flightNumber: 1, flightName: "TC-432", flightDescription: "İstanbul - Roterdam")
-        items.append(item)
         
-        item = Flights(flightNumber: 2, flightName: "TC-712", flightDescription: "Berlin - Kocaeli")
-        items.append(item)
+        let parameters:[String:Any] = ["calendar_type":"departure_date", "destination":"SAW", "origin":"BER", "depart_date":"2020-07"]
         
-        item = Flights(flightNumber: 3, flightName: "TC-232", flightDescription: "Trabzon - Madrid")
-        items.append(item)
+        NetworkManager(method: .get, headerType: .flights, parameters: parameters).request(responseType: Flights.self) { response in
+            guard let response = response as? [Flights] else {
+                //self.delegate?.didFlightDataFetch(false)
+                return
+            }
+            self.items = response
+            //self.delegate?.didFlightDataFetch(true)
+        }
     }
     
     func filterForHotels(_ searchHotel:String){
@@ -42,15 +45,13 @@ class SearchModel {
         if let hotelsArray = items as? [Hotels]{
             filteredArray = hotelsArray.filter({$0.hotelName.contains(searchHotel)})
         }
-        
-        print("Hotels: \(filteredArray)")
     }
     
-    func filterForFlights(_ searchFlight:String){
+    func filterForFlights(_ searchFlight:Int){
         filteredArray.removeAll()
         if let flightsArray = items as? [Flights]{
-            filteredArray = flightsArray.filter({$0.flightDescription.contains(searchFlight)})
+            //filteredArray = flightsArray.filter({$0.flightDescription.contains(searchFlight)})
+            filteredArray = flightsArray.filter({$0.flight_number == searchFlight})
         }
-        print("Flights: \(filteredArray)")
     }
 }

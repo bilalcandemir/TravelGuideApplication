@@ -7,22 +7,15 @@
 
 import Foundation
 
+protocol FlightsHotelsProtocol {
+    func didFlightDataFetch(_ isSuccess:Bool)
+}
+
+
 class FlightsHotelsModel {
     
     var items:[Any] = []
-    
-    func addMockDataForFlights(){
-        items.removeAll()
-        
-        var item = Flights(flightNumber: 1, flightName: "TC-421", flightDescription: "İstanbul - New York")
-        items.append(item)
-        
-        item = Flights(flightNumber: 2, flightName: "TC-761", flightDescription: "Dalaman - Dubai")
-        items.append(item)
-        
-        item = Flights(flightNumber: 3, flightName: "TC-547", flightDescription: "Frankfurt - Amsterdam")
-        items.append(item)
-    }
+    var delegate:FlightsHotelsProtocol?
     
     func addMockDataForHotels(){
         items.removeAll()
@@ -36,4 +29,19 @@ class FlightsHotelsModel {
         item = Hotels(hotelNumber: 3, hotelName: "İstanbul", hotelDescription: "İstanbul Caprice Hotel")
         items.append(item)
     }
+    
+    func getDataForFlights(){
+        let parameters:[String:Any] = ["calendar_type":"departure_date", "destination":"SAW", "origin":"BER", "depart_date":"2020-07"]
+        
+        NetworkManager(method: .get, headerType: .flights, parameters: parameters).request(responseType: Flights.self) { response in
+            guard let response = response as? [Flights] else {
+                self.delegate?.didFlightDataFetch(false)
+                return
+            }
+            self.items = response
+            self.delegate?.didFlightDataFetch(true)
+        }
+    }
+    
+    
 }

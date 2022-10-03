@@ -81,7 +81,9 @@ extension SearchViewController {
             
             else {
                 if let text = searchTextField.text {
-                    viewModel.searchModel.filterForFlights(text)
+                    if let searchNumber = Int(text) {
+                        viewModel.findDataForFlights(searchNumber)
+                    }
                     reloadTableViewDataWithDelay()
                 }
             }
@@ -94,7 +96,7 @@ extension SearchViewController {
             }
             
             else {
-                viewModel.searchModel.filterForFlights("")
+                viewModel.findDataForFlights(0)
                 reloadTableViewData()
             }
         }

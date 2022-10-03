@@ -14,4 +14,8 @@ class HomeViewModel {
     func loadData(){
         articleModel.loadMockData()
     }
+    
+    func returnData() -> [Article]{
+        return articleModel.articlesData
+    }
 }

@@ -16,14 +16,17 @@ class SearchViewModel {
     
     func loadDataForHotels(){
         searchModel.loadDataForHotels()
-        print(searchModel.items)
     }
     
     func findDataForHotels(_ searchHotelText:String){
         searchModel.filterForHotels(searchHotelText)
     }
     
-    func findDataForFlights(_ searchFlightText:String){
+    func findDataForFlights(_ searchFlightText:Int){
         searchModel.filterForFlights(searchFlightText)
+    }
+    
+    func returnSearchData() -> [Any]{
+        return searchModel.filteredArray
     }
 }

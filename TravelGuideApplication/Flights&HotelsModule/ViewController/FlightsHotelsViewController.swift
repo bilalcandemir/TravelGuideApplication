@@ -7,7 +7,9 @@
 
 import UIKit
 
-class FlightsHotelsViewController: UIViewController {
+class FlightsHotelsViewController: UIViewController, FlightsHotelsViewProtocol {
+    
+    
     
     @IBOutlet weak var flightsHotelsTableView: UITableView!
     
@@ -20,8 +22,19 @@ class FlightsHotelsViewController: UIViewController {
         self.title = selectedTitle
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.tabBarController?.tabBar.isHidden = true
-        tableViewHelper = .init(tableView: flightsHotelsTableView, vc: self, itemsArray: viewModel.flightsHotelsModel.items, cellIdentifier: FlightsHotelsTableViewCell.identifier, isSearch: false)
+        viewModel.viewModelDelegate = self
+        tableViewHelper = .init(tableView: flightsHotelsTableView, vc: self, itemsArray: [], cellIdentifier: FlightsHotelsTableViewCell.identifier, isSearch: false)
     }
-
-
+    
+    func didFlightDataFetchDone(_ isSuccess: Bool) {
+        if isSuccess {
+            
+            DispatchQueue.main.async {
+                self.tableViewHelper?.itemsArray = self.viewModel.flightsHotelsModel.items
+                self.tableViewHelper?.tableView?.reloadData()
+            }
+        }
+    }
 }
+
+

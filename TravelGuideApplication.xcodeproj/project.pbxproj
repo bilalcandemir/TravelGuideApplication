@@ -44,6 +44,7 @@
 		569E9CC928E4D72900F4B9EA /* FlightsHotelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569E9CC728E4D72900F4B9EA /* FlightsHotelsTableViewCell.swift */; };
 		569E9CCA28E4D72900F4B9EA /* FlightsHotelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569E9CC828E4D72900F4B9EA /* FlightsHotelsTableViewCell.xib */; };
 		569E9CCC28E4D87D00F4B9EA /* FlightsHotels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569E9CCB28E4D87D00F4B9EA /* FlightsHotels.storyboard */; };
+		56C1876E28E888530083CD8C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1876D28E888530083CD8C /* NetworkManager.swift */; };
 		56E9FF7528E7048A007C24DA /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9FF7428E7048A007C24DA /* BookmarkViewModel.swift */; };
 		56E9FF7728E70494007C24DA /* BookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9FF7628E70494007C24DA /* BookmarkModel.swift */; };
 		56E9FF7928E7049E007C24DA /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9FF7828E7049E007C24DA /* Bookmark.swift */; };
@@ -91,6 +92,7 @@
 		569E9CC728E4D72900F4B9EA /* FlightsHotelsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsHotelsTableViewCell.swift; sourceTree = "<group>"; };
 		569E9CC828E4D72900F4B9EA /* FlightsHotelsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightsHotelsTableViewCell.xib; sourceTree = "<group>"; };
 		569E9CCB28E4D87D00F4B9EA /* FlightsHotels.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlightsHotels.storyboard; sourceTree = "<group>"; };
+		56C1876D28E888530083CD8C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		56E9FF7428E7048A007C24DA /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		56E9FF7628E70494007C24DA /* BookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkModel.swift; sourceTree = "<group>"; };
 		56E9FF7828E7049E007C24DA /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		564A44FE28E339BF00D7912F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				56C1876D28E888530083CD8C /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				5609FAD028E75A84008EA005 /* CoreDataStack.swift in Sources */,
 				56E9FF7528E7048A007C24DA /* BookmarkViewModel.swift in Sources */,
 				564E777628E6280400190601 /* SearchModel.swift in Sources */,
+				56C1876E28E888530083CD8C /* NetworkManager.swift in Sources */,
 				564A451C28E4556000D7912F /* HomeViewControllerExtensions.swift in Sources */,
 				564A450828E33C3300D7912F /* HomeViewController.swift in Sources */,
 				569E9CC428E4D21400F4B9EA /* Hotels.swift in Sources */,

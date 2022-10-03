@@ -31,7 +31,7 @@ class SearchViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         viewModel.loadDataForHotels()
         searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        tableViewHelper = .init(tableView: mainTableView, vc: self, itemsArray: viewModel.searchModel.filteredArray, cellIdentifier: FlightsHotelsTableViewCell.identifier, isSearch: true)
+        tableViewHelper = .init(tableView: mainTableView, vc: self, itemsArray: viewModel.returnSearchData(), cellIdentifier: FlightsHotelsTableViewCell.identifier, isSearch: true)
         searchBarConfiguration()
     }
     
@@ -56,7 +56,7 @@ class SearchViewController: UIViewController {
         selectedSearchType = "FLIGHTS"
         searchTextField.placeholder = "Find Flight"
         searchTextField.text = ""
-        viewModel.findDataForFlights("")
+        viewModel.findDataForFlights(0)
         reloadTableViewData()
         setComponentsFlightsButtonPressed()
     }

@@ -7,15 +7,33 @@
 
 import Foundation
 
-class FlightsHotelsViewModel {
+protocol FlightsHotelsViewProtocol {
+    func didFlightDataFetchDone(_ isSuccess:Bool)
+}
+
+class FlightsHotelsViewModel:FlightsHotelsProtocol {
+    
+    var viewModelDelegate:FlightsHotelsViewProtocol?
+    
     
     var flightsHotelsModel = FlightsHotelsModel()
     
-    func loadDataForFlights(){
-        flightsHotelsModel.addMockDataForFlights()
-    }
     
     func loadDataForHotels(){
         flightsHotelsModel.addMockDataForHotels()
+    }
+    
+    func loadDataForHotelsWithNetwork() {
+        flightsHotelsModel.getDataForFlights()
+        flightsHotelsModel.delegate = self
+    }
+    
+    func didFlightDataFetch(_ isSuccess: Bool) {
+        if isSuccess {
+            viewModelDelegate?.didFlightDataFetchDone(true)
+        }
+        else {
+            viewModelDelegate?.didFlightDataFetchDone(false)
+        }
     }
 }

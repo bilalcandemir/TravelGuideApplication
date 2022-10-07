@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FlightsHotelsViewProtocol {
-    func didFlightDataFetchDone(_ isSuccess:Bool)
+    func didDataFetchDone(_ isSuccess:Bool)
 }
 
 class FlightsHotelsViewModel:FlightsHotelsProtocol {
@@ -19,21 +19,22 @@ class FlightsHotelsViewModel:FlightsHotelsProtocol {
     var flightsHotelsModel = FlightsHotelsModel()
     
     
-    func loadDataForHotels(){
-        flightsHotelsModel.addMockDataForHotels()
+    func loadDataForHotelsWithNetwork(){
+        flightsHotelsModel.getDataForHotels()
+        flightsHotelsModel.delegate = self
     }
     
-    func loadDataForHotelsWithNetwork() {
+    func loadDataForFlightsWithNetwork() {
         flightsHotelsModel.getDataForFlights()
         flightsHotelsModel.delegate = self
     }
     
-    func didFlightDataFetch(_ isSuccess: Bool) {
+    func didDataFetch(_ isSuccess: Bool) {
         if isSuccess {
-            viewModelDelegate?.didFlightDataFetchDone(true)
+            viewModelDelegate?.didDataFetchDone(true)
         }
         else {
-            viewModelDelegate?.didFlightDataFetchDone(false)
+            viewModelDelegate?.didDataFetchDone(false)
         }
     }
 }

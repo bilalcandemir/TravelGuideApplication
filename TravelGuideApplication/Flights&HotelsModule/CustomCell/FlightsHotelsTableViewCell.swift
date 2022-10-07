@@ -68,9 +68,9 @@ class FlightsHotelsTableViewCell: UITableViewCell {
        
     }
     
-    func setHotelsData(_ item:Hotels, _ isSearch:Bool){
+    func setHotelsData(_ item:HotelsCellModel, _ isSearch:Bool){
         mainTitleLabel.text = item.hotelName
-        mainDescriptionLabel.text = item.hotelDescription
+        mainDescriptionLabel.text = String(item.hotelId)
         typeLabel.text = "HOTEL"
         if isSearch {
             typeLabel.isHidden = false

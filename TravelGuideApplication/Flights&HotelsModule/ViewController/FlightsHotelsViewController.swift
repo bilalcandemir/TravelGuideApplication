@@ -11,6 +11,7 @@ class FlightsHotelsViewController: UIViewController, FlightsHotelsViewProtocol {
     
     
     
+    
     @IBOutlet weak var flightsHotelsTableView: UITableView!
     
     var viewModel = FlightsHotelsViewModel()
@@ -26,7 +27,7 @@ class FlightsHotelsViewController: UIViewController, FlightsHotelsViewProtocol {
         tableViewHelper = .init(tableView: flightsHotelsTableView, vc: self, itemsArray: [], cellIdentifier: FlightsHotelsTableViewCell.identifier, isSearch: false)
     }
     
-    func didFlightDataFetchDone(_ isSuccess: Bool) {
+    func didDataFetchDone(_ isSuccess: Bool) {
         if isSuccess {
             
             DispatchQueue.main.async {

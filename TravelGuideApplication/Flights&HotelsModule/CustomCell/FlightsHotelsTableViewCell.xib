@@ -20,8 +20,8 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageArticle1" translatesAutoresizingMaskIntoConstraints="NO" id="vid-5g-EW2">
                         <rect key="frame" x="16" y="8" width="288" height="134"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqh-RM-RR9">
-                        <rect key="frame" x="128" y="60" width="64" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqh-RM-RR9">
+                        <rect key="frame" x="40" y="60" width="240" height="30"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                         <color key="textColor" name="flightsHotelsCellLabel"/>
                         <nil key="highlightedColor"/>
@@ -64,9 +64,10 @@
                     <constraint firstAttribute="bottom" secondItem="vid-5g-EW2" secondAttribute="bottom" constant="8" id="CXU-Qy-ABh"/>
                     <constraint firstItem="iXR-bG-NED" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="IfK-Ii-oSc"/>
                     <constraint firstItem="rWN-Ae-CCd" firstAttribute="top" secondItem="Bqh-RM-RR9" secondAttribute="bottom" constant="4" id="J2g-kk-IlG"/>
-                    <constraint firstItem="Bqh-RM-RR9" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MtV-hB-va4"/>
                     <constraint firstItem="vid-5g-EW2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="RHc-hp-G9H"/>
                     <constraint firstItem="vid-5g-EW2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="UAD-Og-CSh"/>
+                    <constraint firstItem="Bqh-RM-RR9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="24" id="WSA-9U-18B"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Bqh-RM-RR9" secondAttribute="trailing" constant="24" id="Y2A-7c-tFd"/>
                     <constraint firstItem="rWN-Ae-CCd" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Z1Z-NG-JvB"/>
                     <constraint firstItem="Bqh-RM-RR9" firstAttribute="centerY" secondItem="vid-5g-EW2" secondAttribute="centerY" id="ia1-9G-UX9"/>
                     <constraint firstAttribute="trailing" secondItem="vid-5g-EW2" secondAttribute="trailing" constant="16" id="mYZ-3R-Jjs"/>

@@ -57,7 +57,7 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
         }
         
         //Casting process for understand which array come from view model and create the custom cell
-        if let hotelsArray = itemsArray as? [Hotels] {
+        if let hotelsArray = itemsArray as? [HotelsCellModel] {
             let cell = tableView.dequeueReusableCell(withIdentifier: FlightsHotelsTableViewCell.identifier) as! FlightsHotelsTableViewCell
             cell.setHotelsData(hotelsArray[indexPath.row], isSearch)
             return cell
@@ -82,21 +82,17 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
     
     
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        // Check the items array, we just use did select row at func at to Do View controller
-//        if let toDoListArray = itemsArray as? [ToDoListItem] {
-//            // Prepare process for navigate to detail view controller
-//            let storyboard = UIStoryboard(name: "ToDoStoryboard", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "ToDoDetailViewController") as! ToDoDetailViewController
-//
-//            // Give the object id for find which item come. If you want you can also this situation with just change the label and body values inside the class but i don't want it this is more complex
-//            vc.listItemId = toDoListArray[indexPath.row].objectID
-//            vc.delegate = viewController.self as? toDoViewControllerProtocol
-//
-//            // Go to detail view controller
-//            self.viewController?.navigationController?.pushViewController(vc, animated: true)
-//        }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        // Check the items array, we just use did select row at func at to Do View controller
+        if let flights = itemsArray as? [Flights] {
+            // Prepare process for navigate to detail view controller
+            vc.setDataForFlights(flights[indexPath.row])
+            // Go to detail view controller
+            self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 

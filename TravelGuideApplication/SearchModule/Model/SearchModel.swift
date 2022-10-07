@@ -12,19 +12,6 @@ class SearchModel {
     var items:[Any] = []
     var filteredArray:[Any] = []
     
-    func loadDataForHotels(){
-        items.removeAll()
-        var item = Hotels(hotelNumber: 1, hotelName: "Frankfurt", hotelDescription: "Frankfurt Straßenbahn Hotel")
-        items.append(item)
-        
-        item = Hotels(hotelNumber: 2, hotelName: "Amsterdam", hotelDescription: "Amsterdam Den Haag Hotel")
-        items.append(item)
-        
-        item = Hotels(hotelNumber: 3, hotelName: "İstanbul", hotelDescription: "İstanbul Hilton Hotel")
-        items.append(item)
-        
-    }
-    
     func loadDataForFlights(){
         items.removeAll()
         
@@ -42,7 +29,7 @@ class SearchModel {
     
     func filterForHotels(_ searchHotel:String){
         filteredArray.removeAll()
-        if let hotelsArray = items as? [Hotels]{
+        if let hotelsArray = items as? [HotelsCellModel]{
             filteredArray = hotelsArray.filter({$0.hotelName.contains(searchHotel)})
         }
     }

@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         let storyboard = UIStoryboard(name: "FlightsHotels", bundle: nil)
         let flightsViewController = storyboard.instantiateViewController(withIdentifier: "FlightsHotelsViewController") as! FlightsHotelsViewController
         flightsViewController.selectedTitle = "Flights"
-        flightsViewController.viewModel.loadDataForHotelsWithNetwork()
+        flightsViewController.viewModel.loadDataForFlightsWithNetwork()
         self.navigationController?.pushViewController(flightsViewController, animated: true)
     }
     
@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
         let storyboard = UIStoryboard(name: "FlightsHotels", bundle: nil)
         let hotelsViewController = storyboard.instantiateViewController(withIdentifier: "FlightsHotelsViewController") as! FlightsHotelsViewController
         hotelsViewController.selectedTitle = "Hotels"
-        hotelsViewController.viewModel.loadDataForHotels()
+        hotelsViewController.viewModel.loadDataForHotelsWithNetwork()
         self.navigationController?.pushViewController(hotelsViewController, animated: true)
     }
 }

@@ -11,6 +11,9 @@ struct HotelsCellModel{
     var hotelName:String
     var hotelId:Int
     var hotelRating:Double
+    var hotelAddress:String
+    var hotelPrice:String
+    var hotelImageURL:String
 }
 
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
@@ -47,6 +50,7 @@ struct Result: Decodable {
     let starRating: Double
     let address: Address
     let ratePlan: RatePlan
+    let optimizedThumbUrls: OptimizedThumbUrls
 }
 
 struct Address: Decodable {
@@ -56,13 +60,18 @@ struct Address: Decodable {
     let countryName: String
 }
 
-struct RatePlan: Codable {
+struct RatePlan: Decodable {
     let price: RatePlanPrice
 }
 
-struct RatePlanPrice: Codable {
+struct RatePlanPrice: Decodable {
     let current: String
     let exactCurrent: Double
     let info: String
     let additionalInfo: String
+}
+
+
+struct OptimizedThumbUrls: Decodable {
+    let srpDesktop: String
 }

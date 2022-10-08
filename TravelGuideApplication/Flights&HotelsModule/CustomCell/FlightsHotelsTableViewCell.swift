@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FlightsHotelsTableViewCell: UITableViewCell {
     
@@ -19,9 +20,6 @@ class FlightsHotelsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.cornerRadius = 8
-        
-        
         
         selectionStyle = .none
         
@@ -36,11 +34,15 @@ class FlightsHotelsTableViewCell: UITableViewCell {
         gradient.locations = [0.0, 1.0]
 
         view.layer.insertSublayer(gradient, at: 0)
-
+        
+        
         mainImageView.addSubview(view)
 
         mainImageView.bringSubviewToFront(view)
- 
+        
+        mainImageView.layer.cornerRadius = 8
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -53,6 +55,32 @@ class FlightsHotelsTableViewCell: UITableViewCell {
     func setFlightsData(_ item:Flights, _ isSearch:Bool){
         mainTitleLabel.text = "\(item.origin) - \(item.destination)"
         mainDescriptionLabel.text = String(item.flight_number)
+        mainImageView.contentMode = .scaleAspectFit
+        
+        if item.airline == "TK" {
+            mainImageView.image = UIImage(named: "tkLogo")
+        }
+        
+        else if item.airline == "PC" {
+            mainImageView.image = UIImage(named: "pcLogo")
+        }
+        
+        else if item.airline == "XC" {
+            mainImageView.image = UIImage(named: "xcLogo")
+            
+        }
+        
+        else if item.airline == "W6" {
+            mainImageView.image = UIImage(named: "w6Logo")
+        }
+        
+        else if item.airline == "EW" {
+            mainImageView.image = UIImage(named: "ewLogo")
+        }
+        
+        else {
+            mainImageView.image = UIImage(named: "normalFlightLogo")
+        }
         
         typeLabel.text = "FLIGHT"
         
@@ -70,7 +98,11 @@ class FlightsHotelsTableViewCell: UITableViewCell {
     
     func setHotelsData(_ item:HotelsCellModel, _ isSearch:Bool){
         mainTitleLabel.text = item.hotelName
-        mainDescriptionLabel.text = String(item.hotelId)
+        mainDescriptionLabel.text = String(item.hotelAddress)
+        mainImageView.contentMode = .scaleToFill
+        let url = URL(string: item.hotelImageURL)
+        mainImageView.kf.setImage(with: url)
+        
         typeLabel.text = "HOTEL"
         if isSearch {
             typeLabel.isHidden = false

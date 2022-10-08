@@ -27,6 +27,21 @@ class SearchModel {
         }
     }
     
+    func loadDataForHotels(){
+        let parameters:[String:Any] = ["destinationId":"1506246", "pageNumber":"1", "pageSize":"25", "checkIn":"2022-10-20", "checkOut":"2022-10-30", "adults1":"1", "sortOrder":"PRICE", "locale":"en_US", "currency":"USD"]
+        
+        NetworkManager(method: .get, headerType: .hotels, parameters: parameters).requestForHotels(responseType: [Result].self) { response in
+            guard let hotelsArray = response as? [Result] else {
+                return
+            }
+            self.items = self.convertHotelCellModel(hotelsArray)
+        }
+    }
+    
+    func convertHotelCellModel(_ item:[Result]) -> [HotelsCellModel] {
+        return item.map({.init(hotelName: $0.name, hotelId: $0.id, hotelRating: $0.starRating, hotelAddress: $0.address.streetAddress, hotelPrice: $0.ratePlan.price.current, hotelImageURL: $0.optimizedThumbUrls.srpDesktop)})
+    }
+    
     func filterForHotels(_ searchHotel:String){
         filteredArray.removeAll()
         if let hotelsArray = items as? [HotelsCellModel]{

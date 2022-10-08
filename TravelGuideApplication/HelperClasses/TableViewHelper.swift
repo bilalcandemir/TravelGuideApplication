@@ -92,6 +92,12 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
             // Go to detail view controller
             self.viewController?.navigationController?.pushViewController(vc, animated: true)
         }
+        
+        if let hotels = itemsArray as? [HotelsCellModel] {
+            vc.setDataForHotels(hotels[indexPath.row])
+            print(hotels[indexPath.row])
+            self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

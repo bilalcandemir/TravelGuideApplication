@@ -46,7 +46,8 @@ class FlightsHotelsModel {
     }
     
     func getHotelsCellModel(_ hotels:[Result]) -> [HotelsCellModel] {
-        return hotels.map{.init(hotelName: $0.name, hotelId: $0.id, hotelRating: $0.starRating)}
+        //return hotels.map{.init(hotelName: $0.name, hotelId: $0.id, hotelRating: $0.starRating)}
+        return hotels.map({.init(hotelName: $0.name, hotelId: $0.id, hotelRating: $0.starRating, hotelAddress: $0.address.streetAddress, hotelPrice: $0.ratePlan.price.current, hotelImageURL: $0.optimizedThumbUrls.srpDesktop)})
     }
     
     

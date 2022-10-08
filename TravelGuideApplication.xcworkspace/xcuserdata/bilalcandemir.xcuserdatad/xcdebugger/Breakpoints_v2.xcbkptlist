@@ -46,8 +46,8 @@
             filePath = "TravelGuideApplication/SearchModule/Model/SearchModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "filterForHotels(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,9 +206,9 @@
             filePath = "TravelGuideApplication/Flights&amp;HotelsModule/ViewController/FlightsHotelsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "didFlightDataFetchDone(_:)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "didDataFetchDone(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -222,9 +222,9 @@
             filePath = "TravelGuideApplication/Flights&amp;HotelsModule/ViewController/FlightsHotelsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "didFlightDataFetchDone(_:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "didDataFetchDone(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.tabBar.isHidden = true
         detailImageView.clipsToBounds = true
         detailImageView.layer.cornerRadius = 10
         detailImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -34,7 +35,14 @@ class DetailViewController: UIViewController {
     }
     func setData(){
         if selectedCategory == "FLIGHT" {
+            detailImageView.contentMode = .scaleAspectFit
             detailImageView.image = UIImage(named: imageURL ?? "")
+        }
+        
+        else if selectedCategory == "HOTEL" {
+            let url = URL(string: imageURL ?? "")
+            detailImageView.contentMode = .scaleAspectFill
+            detailImageView.kf.setImage(with: url)
         }
         
         titleLabel.text = titleText ?? ""
@@ -76,6 +84,10 @@ class DetailViewController: UIViewController {
     
     func setDataForHotels(_ item:HotelsCellModel){
         selectedCategory = "HOTEL"
+    
+        descriptionText = "\(item.hotelAddress) - \(item.hotelRating) - \(item.hotelPrice)"
+        titleText = item.hotelName
+        imageURL = item.hotelImageURL
     }
     
     func setDataForArticle(_ item:Article){

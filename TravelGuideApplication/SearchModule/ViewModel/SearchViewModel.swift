@@ -15,7 +15,7 @@ class SearchViewModel {
     }
     
     func loadDataForHotels(){
-        
+        searchModel.loadDataForHotels()
     }
     
     func findDataForHotels(_ searchHotelText:String){

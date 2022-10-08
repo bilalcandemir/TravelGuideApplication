@@ -16,9 +16,9 @@ extension BookmarkCoreData {
         return NSFetchRequest<BookmarkCoreData>(entityName: "BookmarkCoreData")
     }
 
-    @NSManaged public var bookmarkId: Int64
-    @NSManaged public var bookmarkName: String?
     @NSManaged public var bookmarkDescription: String?
+    @NSManaged public var bookmarkId: Int16
+    @NSManaged public var bookmarkName: String?
     @NSManaged public var bookmarkDate: String?
 
 }

@@ -95,7 +95,6 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
         
         if let hotels = itemsArray as? [HotelsCellModel] {
             vc.setDataForHotels(hotels[indexPath.row])
-            print(hotels[indexPath.row])
             self.viewController?.navigationController?.pushViewController(vc, animated: true)
         }
     }

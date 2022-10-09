@@ -85,6 +85,7 @@ class FlightsHotelsTableViewCell: UITableViewCell {
         typeLabel.text = "FLIGHT"
         
         if isSearch {
+            typeLabel.text = "FLIGHT"
             typeLabel.isHidden = false
             typeView.isHidden = false
         }
@@ -105,6 +106,7 @@ class FlightsHotelsTableViewCell: UITableViewCell {
         
         typeLabel.text = "HOTEL"
         if isSearch {
+            typeLabel.text = "HOTEL"
             typeLabel.isHidden = false
             typeView.isHidden = false
         }
@@ -114,12 +116,34 @@ class FlightsHotelsTableViewCell: UITableViewCell {
         }
     }
     
-    func setBookmarksData(_ item:Bookmark, _ isSearch:Bool){
+    func setBookmarksData(_ item:BookmarkCoreData, _ isSearch:Bool){
         typeLabel.isHidden = true
         typeView.isHidden = true
         
+        if item.bookmarkType == "HOTEL" {
+            let url = URL(string: item.bookmarkImageURL ?? "")
+            mainImageView.kf.setImage(with: url)
+            typeLabel.text = "HOTEL"
+            typeView.isHidden = false
+            typeLabel.isHidden = false
+        }
+        else if item.bookmarkType == "FLIGHT" {
+            typeLabel.text = "FLIGHT"
+            typeView.isHidden = false
+            typeLabel.isHidden = false
+            
+            mainImageView.image = UIImage(named: "normalFlightLogo")
+            
+        }
+        else {
+            typeLabel.text = "ARTICLE"
+            typeView.isHidden = false
+            typeLabel.isHidden = false
+        }
+        
         mainTitleLabel.text = item.bookmarkName
         mainDescriptionLabel.text = item.bookmarkDescription
+        
     }
     
 }

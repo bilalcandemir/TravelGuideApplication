@@ -8,7 +8,6 @@
 import UIKit
 import Kingfisher
 
-
 class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var detailImageView: UIImageView!
@@ -21,6 +20,8 @@ class DetailViewController: UIViewController {
     var selectedCategory:String?
     var itemId:Int?
     var itemDate:String?
+    var bookmarkStatus:Bool!
+    
     
     var detailViewModel = DetailViewModel()
     
@@ -38,10 +39,24 @@ class DetailViewController: UIViewController {
     
     func checkBookmarkStatus(){
         if selectedCategory == "FLIGHT" {
-            detailViewModel.checkBookmark(itemId ?? 0, true, itemDate)
+            if detailViewModel.checkBookmark(itemId ?? 0, true, itemDate){
+                addButton.setTitle("Remove Bookmark", for: .normal)
+                bookmarkStatus = true
+            }
+            else {
+                addButton.setTitle("Add Bookmark", for: .normal)
+                bookmarkStatus = false
+            }
         }
         else if selectedCategory == "HOTEL" {
-            detailViewModel.checkBookmark(itemId ?? 0, false, nil)
+            if detailViewModel.checkBookmark(itemId ?? 0, false, nil){
+                addButton.setTitle("Remove Bookmark", for: .normal)
+                bookmarkStatus = true
+            }
+            else {
+                addButton.setTitle("Add Bookmark", for: .normal)
+                bookmarkStatus = false
+            }
         }
         else {
             //detailViewModel.checkBookmark(<#T##Int#>, <#T##Bool#>, <#T##String?#>)
@@ -55,8 +70,22 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func bookmarkButtonPressed(_ sender: Any) {
-        // TODO: If bookmark is added or not
-        detailViewModel.addToBookmark(itemId ?? 0, titleText ?? "", itemDate ?? "", descriptionText ?? "")
+        if bookmarkStatus {
+            detailViewModel.removeBookmark()
+            checkBookmarkStatus()
+        }
+        else {
+            if selectedCategory == "HOTEL"{
+                detailViewModel.addToBookmark(itemId ?? 0, titleText ?? "", itemDate ?? "", descriptionText ?? "", imageURL ?? "", .hotel)
+            }
+            else if selectedCategory == "FLIGHT" {
+                detailViewModel.addToBookmark(itemId ?? 0, titleText ?? "", itemDate ?? "", descriptionText ?? "", imageURL ?? "", .flight)
+            }
+            else {
+                detailViewModel.addToBookmark(itemId ?? 0, titleText ?? "", itemDate ?? "", descriptionText ?? "", imageURL ?? "", .article)
+            }
+            checkBookmarkStatus()
+        }
     }
     
     
@@ -125,6 +154,16 @@ class DetailViewController: UIViewController {
     
     func setDataForArticle(_ item:Article){
         selectedCategory = "ARTICLE"
+    }
+    
+    func setDataForBookmark(_ item:BookmarkCoreData){
+        selectedCategory = item.bookmarkType
+        
+        titleText = item.bookmarkName
+        descriptionText = item.bookmarkDescription
+        imageURL = item.bookmarkImageURL
+        itemId = Int(item.bookmarkId)
+        itemDate = item.bookmarkDate
     }
     
     

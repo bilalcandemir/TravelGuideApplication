@@ -8,20 +8,40 @@
 import Foundation
 
 
+
 class DetailViewModel {
     let detailModel = DetailsModel()
+    var detailCoreDataObject:BookmarkCoreData?
     
-    func addToBookmark(_ bookmarkId:Int, _ bookmarkName:String, _ bookmarkDate:String, _ bookmarkDescription:String){
-        detailModel.addBookmark(bookmarkId, bookmarkName, bookmarkDate, bookmarkDescription)
+    func addToBookmark(_ bookmarkId:Int, _ bookmarkName:String, _ bookmarkDate:String, _ bookmarkDescription:String, _ bookmarkImageURL:String, _ bookmarkType:bookmarkType){
+        detailModel.addBookmark(bookmarkId, bookmarkName, bookmarkDate, bookmarkDescription, bookmarkImageURL, bookmarkType)
     }
     
-    func checkBookmark(_ id:Int, _ isFlight:Bool, _ flightDate:String?){
+    func removeBookmark(){
+        detailModel.removeBookmark(detailCoreDataObject!)
+    }
+    
+    func checkBookmark(_ id:Int, _ isFlight:Bool, _ flightDate:String?) -> Bool {
+        
         if isFlight {
-            detailModel.fetchBookmarks(id, true, flightDate)
+            let detailData = detailModel.fetchBookmarks(id, true, flightDate)
+            if detailData == [] {
+                return false
+            }
+            else {
+                detailCoreDataObject = detailData.first
+                return true
+            }
         }
         else {
-            detailModel.fetchBookmarks(id, false,  nil)
+            let detailData = detailModel.fetchBookmarks(id, false, nil)
+            if detailData == [] {
+                return false
+            }
+            else {
+                detailCoreDataObject = detailData.first
+                return true
+            }
         }
-        
     }
 }

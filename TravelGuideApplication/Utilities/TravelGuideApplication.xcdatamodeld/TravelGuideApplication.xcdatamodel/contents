@@ -4,9 +4,11 @@
         <attribute name="bookmarkDate" optional="YES" attributeType="String"/>
         <attribute name="bookmarkDescription" optional="YES" attributeType="String"/>
         <attribute name="bookmarkId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="bookmarkImageURL" optional="YES" attributeType="String"/>
         <attribute name="bookmarkName" optional="YES" attributeType="String"/>
+        <attribute name="bookmarkType" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="BookmarkCoreData" positionX="-63" positionY="9" width="128" height="89"/>
+        <element name="BookmarkCoreData" positionX="-63" positionY="9" width="128" height="119"/>
     </elements>
 </model>

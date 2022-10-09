@@ -20,7 +20,8 @@ extension BookmarkCoreData {
     @NSManaged public var bookmarkName: String?
     @NSManaged public var bookmarkDescription: String?
     @NSManaged public var bookmarkDate: String?
-
+    @NSManaged public var bookmarkImageURL: String?
+    @NSManaged public var bookmarkType: String?
 }
 
 extension BookmarkCoreData : Identifiable {

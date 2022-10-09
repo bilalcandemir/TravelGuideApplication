@@ -63,7 +63,7 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
-        if let bookmarksArray = itemsArray as? [Bookmark] {
+        if let bookmarksArray = itemsArray as? [BookmarkCoreData] {
             let cell = tableView.dequeueReusableCell(withIdentifier: FlightsHotelsTableViewCell.identifier) as! FlightsHotelsTableViewCell
             cell.setBookmarksData(bookmarksArray[indexPath.row], isSearch)
             return cell
@@ -95,6 +95,11 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
         
         if let hotels = itemsArray as? [HotelsCellModel] {
             vc.setDataForHotels(hotels[indexPath.row])
+            self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        if let bookmarks = itemsArray as? [BookmarkCoreData] {
+            vc.setDataForBookmark(bookmarks[indexPath.row])
             self.viewController?.navigationController?.pushViewController(vc, animated: true)
         }
     }

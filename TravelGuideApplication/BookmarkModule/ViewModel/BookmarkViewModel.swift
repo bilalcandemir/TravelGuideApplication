@@ -11,10 +11,10 @@ class BookmarkViewModel {
     var bookmarkModel = BookmarkModel()
     
     func loadData(){
-        bookmarkModel.loadBookmarkData()
+        bookmarkModel.fetchData()
     }
     
-    func returnBookmarkData() -> [Bookmark]{
-        return bookmarkModel.bookMarkArray
+    func returnBookmarkData() -> [BookmarkCoreData]{
+        return bookmarkModel.bookmarkCoreDataArray
     }
 }

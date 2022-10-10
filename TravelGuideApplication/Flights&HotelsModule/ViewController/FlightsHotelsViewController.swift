@@ -8,10 +8,7 @@
 import UIKit
 
 class FlightsHotelsViewController: UIViewController, FlightsHotelsViewProtocol {
-    
-    
-    
-    
+
     @IBOutlet weak var flightsHotelsTableView: UITableView!
     
     var viewModel = FlightsHotelsViewModel()
@@ -31,10 +28,11 @@ class FlightsHotelsViewController: UIViewController, FlightsHotelsViewProtocol {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
+    // When data fetch process done this function gives the items to table view helper
     func didDataFetchDone(_ isSuccess: Bool) {
         if isSuccess {
             DispatchQueue.main.async {
-                self.tableViewHelper?.itemsArray = self.viewModel.flightsHotelsModel.items
+                self.tableViewHelper?.itemsArray = self.viewModel.returnData()
                 self.tableViewHelper?.tableView?.reloadData()
             }
         }

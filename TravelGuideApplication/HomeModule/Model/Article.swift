@@ -8,7 +8,9 @@
 import Foundation
 
 struct Article {
-    var imageURL:String
+    var itemId:Int
+    var imageName:String
     var articleType:String
     var articleTitle:String
+    var description:String
 }

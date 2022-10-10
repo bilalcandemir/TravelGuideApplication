@@ -22,7 +22,6 @@ class CoreDataStack {
                 print("unsuccesfull container loading..: \(error.localizedDescription)")
             }
         }
-        
         return container
     }()
     
@@ -36,8 +35,5 @@ class CoreDataStack {
         } catch let error as NSError {
             print(error)
         }
-        
     }
-    
-    
 }

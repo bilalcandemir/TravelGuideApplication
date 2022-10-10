@@ -6,17 +6,17 @@
 //
 
 import Foundation
-
+// Protocol will call when data fetch done to view model
 protocol FlightsHotelsProtocol {
     func didDataFetch(_ isSuccess:Bool)
 }
-
 
 class FlightsHotelsModel {
     
     var items:[Any] = []
     var delegate:FlightsHotelsProtocol?
     
+    // Get Flights Data with parameters using alamofire and network manager. I choose destionation from berlin to istanbul
     func getDataForFlights(){
         let parameters:[String:Any] = ["calendar_type":"departure_date", "destination":"SAW", "origin":"BER", "depart_date":"2020-07"]
         
@@ -30,6 +30,7 @@ class FlightsHotelsModel {
         }
     }
     
+    // Get Hotels Data with parameters using alamofire and network manager
     func getDataForHotels(){
         let parameters:[String:Any] = ["destinationId":"1506246", "pageNumber":"1", "pageSize":"25", "checkIn":"2022-10-20", "checkOut":"2022-10-30", "adults1":"1", "sortOrder":"PRICE", "locale":"en_US", "currency":"USD"]
         
@@ -37,18 +38,14 @@ class FlightsHotelsModel {
             guard let hotelsArray = response as? [Result] else {
                 self.delegate?.didDataFetch(false)
                 return
-                
             }
-            
             self.items = self.getHotelsCellModel(hotelsArray)
             self.delegate?.didDataFetch(true)
         }
     }
     
+    // Convert the hotels result data to HotelsCellModel
     func getHotelsCellModel(_ hotels:[Result]) -> [HotelsCellModel] {
-        //return hotels.map{.init(hotelName: $0.name, hotelId: $0.id, hotelRating: $0.starRating)}
         return hotels.map({.init(hotelName: $0.name, hotelId: $0.id, hotelRating: $0.starRating, hotelAddress: $0.address.streetAddress, hotelPrice: $0.ratePlan.price.current, hotelImageURL: $0.optimizedThumbUrls.srpDesktop)})
     }
-    
-    
 }

@@ -41,9 +41,8 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
         // Give the items array count
         return itemsArray.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if itemsArray.isEmpty {
             let cell = UITableViewCell()
             return cell
@@ -63,29 +62,26 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
+        //Casting process for understand which array come from view model and create the custom cell
         if let bookmarksArray = itemsArray as? [BookmarkCoreData] {
             let cell = tableView.dequeueReusableCell(withIdentifier: FlightsHotelsTableViewCell.identifier) as! FlightsHotelsTableViewCell
             cell.setBookmarksData(bookmarksArray[indexPath.row], isSearch)
             return cell
         }
-        
-        
         let cell = UITableViewCell()
         return cell
     }
     
+    // Height for row at makes give static height to cell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
     }
-    
-    
-    
-    
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "DetailStoryboard", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        // Check the items array, we just use did select row at func at to Do View controller
+        
+        // Cast the items array to prepare set data functions
         if let flights = itemsArray as? [Flights] {
             // Prepare process for navigate to detail view controller
             vc.setDataForFlights(flights[indexPath.row])
@@ -95,11 +91,13 @@ extension TableViewHelper:UITableViewDelegate, UITableViewDataSource {
         
         if let hotels = itemsArray as? [HotelsCellModel] {
             vc.setDataForHotels(hotels[indexPath.row])
+            // Go to detail view controller
             self.viewController?.navigationController?.pushViewController(vc, animated: true)
         }
         
         if let bookmarks = itemsArray as? [BookmarkCoreData] {
             vc.setDataForBookmark(bookmarks[indexPath.row])
+            // Go to detail view controller
             self.viewController?.navigationController?.pushViewController(vc, animated: true)
         }
     }

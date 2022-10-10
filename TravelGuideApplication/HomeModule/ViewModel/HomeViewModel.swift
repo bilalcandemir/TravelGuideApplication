@@ -12,7 +12,7 @@ class HomeViewModel {
     let articleModel = ArticleModel()
     
     func loadData(){
-        articleModel.loadMockData()
+        articleModel.addArticleData()
     }
     
     func returnData() -> [Article]{

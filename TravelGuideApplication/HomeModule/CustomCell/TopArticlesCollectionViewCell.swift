@@ -30,8 +30,9 @@ class TopArticlesCollectionViewCell: UICollectionViewCell {
     }
     
     func showData(_ item:Article){
-        articleImageView.image = UIImage(named: item.imageURL)
+        articleImageView.image = UIImage(named: item.imageName)
         articleTypeLabel.text = item.articleType
         articleTitleLabel.text = item.articleTitle
+        articleImageView.layer.cornerRadius = 8
     }
 }

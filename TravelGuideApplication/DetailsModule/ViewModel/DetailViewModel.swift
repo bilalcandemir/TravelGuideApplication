@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 class DetailViewModel {
     let detailModel = DetailsModel()
     var detailCoreDataObject:BookmarkCoreData?
@@ -39,8 +37,10 @@ class DetailViewModel {
             }
         }
         else {
+            if checkBookmark(itemId, false, nil){
+                return true
+            }
             return false
-            //detailViewModel.checkBookmark(<#T##Int#>, <#T##Bool#>, <#T##String?#>)
         }
     }
     

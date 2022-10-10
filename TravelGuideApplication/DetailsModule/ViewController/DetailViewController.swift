@@ -8,7 +8,9 @@
 import UIKit
 import Kingfisher
 
+// I couldn't MVVM architecture in this class 
 class DetailViewController: UIViewController {
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -21,7 +23,6 @@ class DetailViewController: UIViewController {
     var itemId:Int?
     var itemDate:String?
     var bookmarkStatus:Bool!
-    
     
     var detailViewModel = DetailViewModel()
     
@@ -37,18 +38,19 @@ class DetailViewController: UIViewController {
         setData()
     }
     
+    // This function goes to view model and check the core data item is there or not, after that change the status value
     func checkBookmarkStatus(){
         if detailViewModel.checkBookmarkStatus(selectedCategory ?? "HOTEL", itemId ?? 0, itemDate ?? "") {
             addButton.setTitle("Remove Bookmark", for: .normal)
             bookmarkStatus = true
         }
-        
         else {
             addButton.setTitle("Add Bookmark", for: .normal)
             bookmarkStatus = false
         }
     }
     
+    // Custom back button action
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -82,6 +84,11 @@ class DetailViewController: UIViewController {
             let url = URL(string: imageURL ?? "")
             detailImageView.contentMode = .scaleAspectFill
             detailImageView.kf.setImage(with: url)
+        }
+        
+        else {
+            detailImageView.contentMode = .scaleAspectFill
+            detailImageView.image = UIImage(named: imageURL ?? "")
         }
         
         titleLabel.text = titleText ?? ""
@@ -136,6 +143,15 @@ class DetailViewController: UIViewController {
     
     func setDataForArticle(_ item:Article){
         selectedCategory = "ARTICLE"
+        titleText = item.articleTitle
+        descriptionText = item.description
+        imageURL = item.imageName
+        let time = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM"
+        let formatteddate = formatter.string(from: time)
+        itemDate = formatteddate
+        itemId = item.itemId
     }
     
     func setDataForBookmark(_ item:BookmarkCoreData){
@@ -147,6 +163,4 @@ class DetailViewController: UIViewController {
         itemId = Int(item.bookmarkId)
         itemDate = item.bookmarkDate
     }
-    
-    
 }

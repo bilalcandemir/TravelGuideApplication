@@ -26,17 +26,17 @@
                         <color key="textColor" name="flightsHotelsCellLabel"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWN-Ae-CCd">
-                        <rect key="frame" x="138" y="94" width="44" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWN-Ae-CCd">
+                        <rect key="frame" x="40" y="94" width="240" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" name="flightsHotelsCellLabel"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXR-bG-NED">
-                        <rect key="frame" x="28" y="22" width="62" height="24"/>
+                        <rect key="frame" x="28" y="22" width="72" height="24"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOTEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMo-S7-CVW">
-                                <rect key="frame" x="4" y="4" width="54" height="16"/>
+                                <rect key="frame" x="4" y="4" width="64" height="16"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" name="flightsHotelsCellLabel"/>
@@ -50,7 +50,7 @@
                             <constraint firstAttribute="trailing" secondItem="tMo-S7-CVW" secondAttribute="trailing" constant="4" id="ShG-WZ-phb"/>
                             <constraint firstAttribute="height" constant="24" id="UR5-uj-uQr"/>
                             <constraint firstItem="tMo-S7-CVW" firstAttribute="top" secondItem="iXR-bG-NED" secondAttribute="top" constant="4" id="eEP-NQ-gq8"/>
-                            <constraint firstAttribute="width" constant="62" id="fp5-Un-Srz"/>
+                            <constraint firstAttribute="width" constant="72" id="fp5-Un-Srz"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -64,6 +64,7 @@
                     <constraint firstAttribute="bottom" secondItem="vid-5g-EW2" secondAttribute="bottom" constant="8" id="CXU-Qy-ABh"/>
                     <constraint firstItem="iXR-bG-NED" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="IfK-Ii-oSc"/>
                     <constraint firstItem="rWN-Ae-CCd" firstAttribute="top" secondItem="Bqh-RM-RR9" secondAttribute="bottom" constant="4" id="J2g-kk-IlG"/>
+                    <constraint firstItem="rWN-Ae-CCd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="24" id="JxE-41-6RD"/>
                     <constraint firstItem="vid-5g-EW2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="RHc-hp-G9H"/>
                     <constraint firstItem="vid-5g-EW2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="UAD-Og-CSh"/>
                     <constraint firstItem="Bqh-RM-RR9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="24" id="WSA-9U-18B"/>
@@ -71,6 +72,7 @@
                     <constraint firstItem="rWN-Ae-CCd" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Z1Z-NG-JvB"/>
                     <constraint firstItem="Bqh-RM-RR9" firstAttribute="centerY" secondItem="vid-5g-EW2" secondAttribute="centerY" id="ia1-9G-UX9"/>
                     <constraint firstAttribute="trailing" secondItem="vid-5g-EW2" secondAttribute="trailing" constant="16" id="mYZ-3R-Jjs"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rWN-Ae-CCd" secondAttribute="trailing" constant="24" id="qzH-wL-pky"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -8,17 +8,21 @@
 import Foundation
 
 class DetailViewModel {
+    
     let detailModel = DetailsModel()
     var detailCoreDataObject:BookmarkCoreData?
     
+    // Send the datas which came from view controller to model and save object to core data
     func addToBookmark(_ bookmarkId:Int, _ bookmarkName:String, _ bookmarkDate:String, _ bookmarkDescription:String, _ bookmarkImageURL:String, _ bookmarkType:bookmarkType){
         detailModel.addBookmark(bookmarkId, bookmarkName, bookmarkDate, bookmarkDescription, bookmarkImageURL, bookmarkType)
     }
     
+    // Remove data from core data
     func removeBookmark(){
         detailModel.removeBookmark(detailCoreDataObject!)
     }
     
+    // Check bookmark status, item date parameter is for flight data. I am checking flight number and flight date because inside of flight api data has too many same flight number.
     func checkBookmarkStatus(_ selectedCategory:String, _ itemId:Int, _ itemDate:String) -> Bool{
         if selectedCategory == "FLIGHT" {
             if checkBookmark(itemId , true, itemDate){

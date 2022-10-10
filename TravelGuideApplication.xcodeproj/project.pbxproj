@@ -178,7 +178,6 @@
 		564A44F428E338DD00D7912F /* SearchModule */ = {
 			isa = PBXGroup;
 			children = (
-				564A450C28E3577700D7912F /* CustomCell */,
 				564A450B28E3577200D7912F /* Model */,
 				564A450A28E3576D00D7912F /* ViewModel */,
 				564A450928E3576200D7912F /* ViewController */,
@@ -308,13 +307,6 @@
 				564E777528E6280400190601 /* SearchModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		564A450C28E3577700D7912F /* CustomCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		564A451128E3583800D7912F /* ViewController */ = {

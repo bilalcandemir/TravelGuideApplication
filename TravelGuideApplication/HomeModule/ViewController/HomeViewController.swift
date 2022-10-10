@@ -29,11 +29,12 @@ class HomeViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         super.viewWillAppear(animated)
     }
-    
+    // Collection view creating process using Collection View Helper Class
     func createCollectionView(){
         collectionHelper = .init(articlesCollectionView, self, viewModel.returnData(), self.navigationController!)
     }
     
+    // Go to Flights
     @IBAction func flightsButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "FlightsHotels", bundle: nil)
         let flightsViewController = storyboard.instantiateViewController(withIdentifier: "FlightsHotelsViewController") as! FlightsHotelsViewController
@@ -41,7 +42,7 @@ class HomeViewController: UIViewController {
         flightsViewController.viewModel.loadDataForFlightsWithNetwork()
         self.navigationController?.pushViewController(flightsViewController, animated: true)
     }
-    
+    // Go to Hotels
     @IBAction func hotelsButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "FlightsHotels", bundle: nil)
         let hotelsViewController = storyboard.instantiateViewController(withIdentifier: "FlightsHotelsViewController") as! FlightsHotelsViewController

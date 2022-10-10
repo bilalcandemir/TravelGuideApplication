@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-// I couldn't MVVM architecture in this class 
+// I couldn't MVVM architecture in this class
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -34,6 +34,7 @@ class DetailViewController: UIViewController {
         detailImageView.clipsToBounds = true
         detailImageView.layer.cornerRadius = 10
         detailImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        // First job is look to core data
         checkBookmarkStatus()
         setData()
     }
@@ -55,11 +56,14 @@ class DetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    // Bookmark Add or Remove Button Pressed
     @IBAction func bookmarkButtonPressed(_ sender: Any) {
+        // If bookmark status is true, then delete the object inside of core data
         if bookmarkStatus {
             detailViewModel.removeBookmark()
             checkBookmarkStatus()
         }
+        // If bookmark status is false, add object to core data
         else {
             if selectedCategory == "HOTEL"{
                 detailViewModel.addToBookmark(itemId ?? 0, titleText ?? "", itemDate ?? "", descriptionText ?? "", imageURL ?? "", .hotel)
@@ -70,10 +74,12 @@ class DetailViewController: UIViewController {
             else {
                 detailViewModel.addToBookmark(itemId ?? 0, titleText ?? "", itemDate ?? "", descriptionText ?? "", imageURL ?? "", .article)
             }
+            // After add and remove operations check bookmark core data again and change the button names
             checkBookmarkStatus()
         }
     }
     
+    // Set data
     func setData(){
         if selectedCategory == "FLIGHT" {
             detailImageView.contentMode = .scaleAspectFit
@@ -96,6 +102,7 @@ class DetailViewController: UIViewController {
         categoryLabel.text = selectedCategory ?? ""
     }
     
+    // Set data flights this item come from previous view controller
     func setDataForFlights(_ item:Flights){
         selectedCategory = "FLIGHT"
         
@@ -131,6 +138,7 @@ class DetailViewController: UIViewController {
         
     }
     
+    // Set data hotels this item come from previous view controller
     func setDataForHotels(_ item:HotelsCellModel){
         selectedCategory = "HOTEL"
         
@@ -141,11 +149,13 @@ class DetailViewController: UIViewController {
         itemDate = item.hotelName
     }
     
+    // Set data articles this item come from previous view controller
     func setDataForArticle(_ item:Article){
         selectedCategory = "ARTICLE"
         titleText = item.articleTitle
         descriptionText = item.description
         imageURL = item.imageName
+        // Set the date as String
         let time = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM"
@@ -154,9 +164,9 @@ class DetailViewController: UIViewController {
         itemId = item.itemId
     }
     
+    // Set data bookmark this item come from previous view controller
     func setDataForBookmark(_ item:BookmarkCoreData){
         selectedCategory = item.bookmarkType
-        
         titleText = item.bookmarkName
         descriptionText = item.bookmarkDescription
         imageURL = item.bookmarkImageURL

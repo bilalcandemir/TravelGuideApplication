@@ -11,6 +11,7 @@ class ArticleModel {
     
     var articlesData = [Article]()
     
+    // I added static article data , so i didn't find the proper api and data.
     func addArticleData(){
         var item = Article(itemId: 1, imageName: "imageArticle1", articleType: "EXPERIENCE", articleTitle: "Beautiful Alley Scene in Old Town in Europe at Sunset", description: "Roma is the capital city of Italy. It is also the capital of the Lazio region, the centre of the Metropolitan City of Rome, and a special comune named Comune di Roma Capitale. With 2,860,009 residents in 1,285 km2 (496.1 sq mi), Rome is the country's most populated comune and the third most populous city in the European Union by population within city limits.")
         articlesData.append(item)

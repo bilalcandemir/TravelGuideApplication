@@ -8,6 +8,7 @@
 import Foundation
 
 class BookmarkViewModel {
+    
     var bookmarkModel = BookmarkModel()
     
     func loadData(){

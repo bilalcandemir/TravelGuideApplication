@@ -9,12 +9,11 @@ import Foundation
 import CoreData
 
 class BookmarkModel {
+    
     var bookmarkCoreDataArray:[BookmarkCoreData] = []
-    
-    
+    // Fetch all bookmark data from core data
     func fetchData(){
         let fetchRequest: NSFetchRequest<BookmarkCoreData> = BookmarkCoreData.fetchRequest()
-        
         do {
             let context = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
             let results = try context.fetch(fetchRequest)

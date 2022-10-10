@@ -38,36 +38,20 @@ class DetailViewController: UIViewController {
     }
     
     func checkBookmarkStatus(){
-        if selectedCategory == "FLIGHT" {
-            if detailViewModel.checkBookmark(itemId ?? 0, true, itemDate){
-                addButton.setTitle("Remove Bookmark", for: .normal)
-                bookmarkStatus = true
-            }
-            else {
-                addButton.setTitle("Add Bookmark", for: .normal)
-                bookmarkStatus = false
-            }
+        if detailViewModel.checkBookmarkStatus(selectedCategory ?? "HOTEL", itemId ?? 0, itemDate ?? "") {
+            addButton.setTitle("Remove Bookmark", for: .normal)
+            bookmarkStatus = true
         }
-        else if selectedCategory == "HOTEL" {
-            if detailViewModel.checkBookmark(itemId ?? 0, false, nil){
-                addButton.setTitle("Remove Bookmark", for: .normal)
-                bookmarkStatus = true
-            }
-            else {
-                addButton.setTitle("Add Bookmark", for: .normal)
-                bookmarkStatus = false
-            }
-        }
+        
         else {
-            //detailViewModel.checkBookmark(<#T##Int#>, <#T##Bool#>, <#T##String?#>)
+            addButton.setTitle("Add Bookmark", for: .normal)
+            bookmarkStatus = false
         }
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
     
     @IBAction func bookmarkButtonPressed(_ sender: Any) {
         if bookmarkStatus {
@@ -87,8 +71,6 @@ class DetailViewController: UIViewController {
             checkBookmarkStatus()
         }
     }
-    
-    
     
     func setData(){
         if selectedCategory == "FLIGHT" {

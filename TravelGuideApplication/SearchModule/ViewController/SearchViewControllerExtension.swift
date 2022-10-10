@@ -36,6 +36,15 @@ extension SearchViewController {
     }
     
     func searchBarConfiguration(){
+        
+//        let noDataView = UIView(frame: CGRect(x: mainTableView.frame.midX, y: mainTableView.frame.midY, width: mainTableView.frame.width, height: mainTableView.frame.height))
+//        let noDataImageView = UIImageView(image: UIImage(named: "noDataIcon"))
+//        noDataView.frame = CGRect(x: noDataView.frame.midX, y: noDataView.frame.midY, width: 60, height: 60)
+//        noDataView.addSubview(noDataImageView)
+//        mainTableView.backgroundView = noDataView
+        
+        
+        
         flightsSeperatorView.isHidden = true
         hotelsSeperatorView.isHidden = false
         
@@ -56,15 +65,24 @@ extension SearchViewController {
     }
     
     func reloadTableViewDataWithDelay(){
+        let data = viewModel.returnSearchData()
+        
+        if data.isEmpty {
+            mainTableView.isHidden = true
+        }
+        else {
+            mainTableView.isHidden = false
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-            self.tableViewHelper?.itemsArray = self.viewModel.searchModel.filteredArray
+            self.tableViewHelper?.itemsArray = data
             self.tableViewHelper?.tableView?.reloadData()
         })
     }
     
     func reloadTableViewData(){
         DispatchQueue.main.async {
-            self.tableViewHelper?.itemsArray = self.viewModel.searchModel.filteredArray
+            self.tableViewHelper?.itemsArray = self.viewModel.returnSearchData()
             self.tableViewHelper?.tableView?.reloadData()
         }
     }
@@ -74,7 +92,7 @@ extension SearchViewController {
         if searchTextField.text!.count > 2 {
             if selectedSearchType == "HOTEL" {
                 if let text = searchTextField.text {
-                    viewModel.searchModel.filterForHotels(text)
+                    viewModel.findDataForHotels(text)
                     reloadTableViewDataWithDelay()
                 }
             }
@@ -91,7 +109,7 @@ extension SearchViewController {
         else {
             
             if selectedSearchType == "HOTEL" {
-                viewModel.searchModel.filterForHotels("")
+                viewModel.findDataForHotels("")
                 reloadTableViewData()
             }
             

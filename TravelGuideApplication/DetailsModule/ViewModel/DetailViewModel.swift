@@ -21,6 +21,29 @@ class DetailViewModel {
         detailModel.removeBookmark(detailCoreDataObject!)
     }
     
+    func checkBookmarkStatus(_ selectedCategory:String, _ itemId:Int, _ itemDate:String) -> Bool{
+        if selectedCategory == "FLIGHT" {
+            if checkBookmark(itemId , true, itemDate){
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        else if selectedCategory == "HOTEL" {
+            if checkBookmark(itemId , false, nil){
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            return false
+            //detailViewModel.checkBookmark(<#T##Int#>, <#T##Bool#>, <#T##String?#>)
+        }
+    }
+    
     func checkBookmark(_ id:Int, _ isFlight:Bool, _ flightDate:String?) -> Bool {
         
         if isFlight {

@@ -33,7 +33,6 @@ class FlightsHotelsViewController: UIViewController, FlightsHotelsViewProtocol {
     
     func didDataFetchDone(_ isSuccess: Bool) {
         if isSuccess {
-            
             DispatchQueue.main.async {
                 self.tableViewHelper?.itemsArray = self.viewModel.flightsHotelsModel.items
                 self.tableViewHelper?.tableView?.reloadData()

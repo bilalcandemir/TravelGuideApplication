@@ -22,6 +22,9 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var mainTableView: UITableView!
     
+    @IBOutlet weak var noDataView: UIView!
+    
+    
     var selectedSearchType = "HOTEL"
     var viewModel = SearchViewModel()
     var tableViewHelper:TableViewHelper?
